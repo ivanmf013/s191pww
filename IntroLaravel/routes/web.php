@@ -8,6 +8,7 @@ Route::get('/', [ControladorVistas::class, 'home'])->name('inicio');
 Route::get('/formulario', [ControladorVistas::class, 'insert'])->name('formu');
 Route::get('/clientes', [ControladorVistas::class, 'select'])->name('consulta');
 
+Route::POST('/enviarCliente', [ControladorVistas::class, 'procesarCliente'])->name('');
 
 /*Route::view('/','inicio')->name('inicio');
 
