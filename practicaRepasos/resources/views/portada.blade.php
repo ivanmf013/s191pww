@@ -58,6 +58,9 @@
                 </div>
             </div>
         </div>
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-info" onclick="window.location.href='{{ url('/repaso1') }}'">REPASO 1</button>
+        </div>
     </div>
 </body>
 </html>
