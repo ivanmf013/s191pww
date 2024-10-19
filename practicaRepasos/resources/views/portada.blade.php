@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portada - Practica Repasos</title>
-    <!-- Incluir Vite para cargar CSS y JS compilados -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         body {
