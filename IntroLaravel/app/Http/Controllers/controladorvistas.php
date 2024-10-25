@@ -33,7 +33,14 @@ class ControladorVistas extends Controller
         //redireccion con valores adjunto (variables, arreglos etc..)
         //$id=[['usuario'=>'1'],['usuario'=>'2']];
         //return view('formulario', compact('id'));
-
+        
+        $validacion = $peticion->validate([
+            'txtnombre'=> 'required|min:3|max:20',
+            'txtapellido'=> 'required',
+            'txtcorreo'=> 'required|email:rfc,dns',
+            'txttelefono'=> 'required|numeric',
+        ]);
+        
         //redireccion enviando msj en session 
         $usuario= $peticion->input('txtnombre');
         session()->flash('exito','se guardo el usuario: '.$usuario);
