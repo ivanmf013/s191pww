@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Biblioteca Toncha - Sistema de Gestión">
-    
+
     @vite(['resources/js/app.js'])
-    
+
     <title>Biblioteca Toncha</title>
 </head>
 <body class="min-h-screen bg-light">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Biblioteca Toncha</a>
+    <a class="navbar-brand" href="{{ route('principal') }}">Biblioteca Toncha</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Principal</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('principal') }}">Principal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Registro libro</a>
+          <a class="nav-link" href="{{ route('registro') }}">Registro libro</a>
         </li>
       </ul>
     </div>
@@ -32,6 +32,13 @@
     <!-- Contenido Principal -->
     <main class="py-4">
         <div class="container">
+            <!-- Mensaje de éxito -->
+            @if (session('exito'))
+                <div class="alert alert-success">
+                    {{ session('exito') }}
+                </div>
+            @endif
+
             @yield('contenido')
         </div>
     </main>

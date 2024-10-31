@@ -11,3 +11,6 @@ Route::get('/registro', [ControladorBiblioteca::class, 'crearRegistro'])->name('
 
 // Ruta para registrar un libro (POST)
 Route::post('/libros', [ControladorBiblioteca::class, 'guardarLibro'])->name('libros.guardar');
+
+// Ruta para procesar peticiones POST en procesarLibro
+Route::post('/procesar-libro', [ControladorBiblioteca::class, 'procesarLibro'])->name('libros.procesar');
