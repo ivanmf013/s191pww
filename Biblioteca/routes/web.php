@@ -1,17 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorBiblioteca;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Ruta para la vista principal
+Route::get('/', [ControladorBiblioteca::class, 'index'])->name('principal');
 
-Route::get('/', function () {
-    return view('principal'); 
-});
+// Ruta para el formulario de registro de libros (GET)
+Route::get('/registro', [ControladorBiblioteca::class, 'crearRegistro'])->name('registro');  
 
-Route::view('/registro', 'registro');  
-
-Route::post('/libros', function() {
-    return "Libro registrado";
-});
+// Ruta para registrar un libro (POST)
+Route::post('/libros', [ControladorBiblioteca::class, 'guardarLibro'])->name('libros.guardar');
