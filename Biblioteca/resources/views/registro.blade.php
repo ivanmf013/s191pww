@@ -4,12 +4,24 @@
 
 @section('contenido')
 <div class="row justify-content-center">
+    @if (session('exito'))
+            <script>
+            Swal.fire({
+                title: "Respuesta del servidor",
+                text: '{{ session('exito') }}',
+                icon: 'success'
+            });
+            </script>
+            @endif
     <div class="col-md-8">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
                 <h4 class="mb-0">Registro de Nuevo Libro</h4>
             </div>
             <div class="card-body">
+
+          
+ 
                 <!-- Formulario de registro de libro -->
                 <form action="{{ route('libros.guardar') }}" method="POST">
                     @csrf  <!-- Token de seguridad -->

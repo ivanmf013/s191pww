@@ -9,12 +9,12 @@ class ControladorBiblioteca extends Controller
 {
     public function index()
     {
-        return view('principal'); // Cargar la vista principal
+        return view('principal'); 
     }
 
     public function crearRegistro()
     {
-        return view('registro'); // Cargar la vista de registro de libros
+        return view('registro'); 
     }
 
     public function guardarLibro(Request $request)
@@ -29,13 +29,13 @@ class ControladorBiblioteca extends Controller
             'email_editorial' => 'required|email',
         ]);
 
-        // Aquí podrías guardar el libro en la base de datos...
 
         return redirect()->route('registro')->with('exito', '¡Libro registrado exitosamente!');
     }
 
     public function procesarLibro(Request $peticion)
     {
-        return $peticion->all();
+        session()->flash('exito', 'Se ha enviado correctamente');
+        return to_route('registro');
     }
 }

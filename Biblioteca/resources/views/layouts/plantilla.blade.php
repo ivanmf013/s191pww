@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Biblioteca Toncha - Sistema de Gestión">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @vite(['resources/js/app.js'])
 
@@ -32,12 +33,7 @@
     <!-- Contenido Principal -->
     <main class="py-4">
         <div class="container">
-            <!-- Mensaje de éxito -->
-            @if (session('exito'))
-                <div class="alert alert-success">
-                    {{ session('exito') }}
-                </div>
-            @endif
+           
 
             @yield('contenido')
         </div>
