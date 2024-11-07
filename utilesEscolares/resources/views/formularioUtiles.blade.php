@@ -17,17 +17,25 @@
  </div>
  <div class="card-body text-justify">
   <form>
+  <form method="POST"  action="/enviarUtiles">
+  @csrf
+
+  
     <div class="mb-3">
       <label for="Nombre" class="form-label">Nombre: </label>
-      <input type="text" class="form-control" id="nombre">
+      <input type="text"  class="form-control" name="nombre" value="{{old('nombre')}}">
+      <small class="text-danger fts-italic"> {{$errors->first('nombre')}}</small>
+      
   </div>
   <div class="mb-3">
       <label for="Marca" class="form-label">Marca: </label>
-      <input type="text" class="form-control" id="Marca">
+      <input type="text"  class="form-control" name="Marca" value="{{old('Marca')}}">
+      <small class="text-danger fts-italic"> {{$errors->first('nombre')}}</small>
   </div>
   <div class="mb-3">
       <label for="cantidad" class="form-label">Cantida: </label>
-      <input type="number" class="form-control" id="cantidad">
+      <input type="text"  class="form-control" name="Cantidad" value="{{old('Cantidad')}}">
+      <small class="text-danger fts-italic"> {{$errors->first('cantidad')}}</small>
   </div>
 
   <div class="card-footer text-muted">
