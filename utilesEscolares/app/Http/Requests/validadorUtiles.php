@@ -20,14 +20,20 @@ class validadorUtiles extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
         return [
             
             'nombre'=> 'required|min:3|max:20',
             'Marca'=> 'required|min:3|max:5',
             'Cantidad'=> 'required|numeric',
         
+{
+    return [
+        'nombre' => 'required|min:3|max:20',
+        'Marca' => 'required|min:3|max:20',  
+        'Cantidad' => 'required|numeric',
     ];
+}
                
     }
 }
+
