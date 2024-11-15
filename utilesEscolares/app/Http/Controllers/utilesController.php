@@ -15,11 +15,8 @@ class utilesController extends Controller
         $nombre = $peticion->input('nombre');
         $marca = $peticion->input('Marca');
         
-        $utiles= $peticion->input('nombre');
-        session()->flash('exito','se guardo: : '.$utiles);
         session()->flash('exito', "<h5>Se guardó el útil: $nombre, Marca: $marca</h5>");
         return to_route('formulario');
     }
-
 }
 

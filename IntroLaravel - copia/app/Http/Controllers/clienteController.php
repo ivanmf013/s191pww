@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controladorCRUD extends Controller
+class clienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +15,15 @@ class controladorCRUD extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * sirve para abrir el formulario.
      */
     public function create()
     {
-        //
+        return view('formulario');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * sirve para abrir el formulario.
      */
     public function store(Request $request)
     {
