@@ -25,7 +25,7 @@
           <a class="nav-link  {{ request()->routeIs('formu')?"text-warning" :"" }}"  href="/formulario">{{__('Registro Clientes')}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('consulta')?"text-success" :"" }}"" href="/consultar">{{__('Consultar Clientes')}}</a>
+          <a class="nav-link {{ request()->routeIs('consulta')?"text-success" :"" }}"" href="/consulta">{{__('Consultar Clientes')}}</a>
         </li>
       </ul>
     </div>
