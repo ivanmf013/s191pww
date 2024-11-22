@@ -64,22 +64,42 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+    $cliente = DB::table('cliente')->where('id', $id)->first();
+    return view('formularioedit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request, string $id)
     {
-        //
-    }
+        $consultaCliente = DB::table('cliente')
+        ->where('id',$id)
+        ->update([
+            "nombre"=>$request->input('txtnombre'),
+            "apellido"=>$request->input('txtapellido'),
+            "correo"=>$request->input('txtcorreo'),
+            "telefono"=>$request->input('txttelefono'),
+            "updated_at"=>Carbon::now(),
+        ]);
 
+        $usuario= $request->input('txtnombre');
+        session()->flash('exitoUpdate','se actualizo el usuario: '.$usuario);
+        return to_route('consulta');
+
+    }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $cliente = DB::table('cliente')->where('id', $id)->first();
+    
+    DB::table('cliente')
+    ->where('id', $id)
+    ->delete();
+
+    session()->flash('exitoDelete', 'El usuario '.$cliente->nombre.' ha sido eliminado');
+    return to_route('consulta');
     }
 }
