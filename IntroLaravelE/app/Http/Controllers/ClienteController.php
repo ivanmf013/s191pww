@@ -2,20 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
 use Illuminate\Http\Request;
 
-class clienteController extends Controller
+class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+     public function home() {
+        return view('inicio');
+    }
+
+
     public function index()
     {
-        //
+        return view('clientes');
     }
 
     /**
-     * sirve para abrir el formulario.
+     * Show the form for creating a new resource.
      */
     public function create()
     {
@@ -23,7 +30,7 @@ class clienteController extends Controller
     }
 
     /**
-     * sirve para abrir el formulario.
+     * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
@@ -33,7 +40,7 @@ class clienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(cliente $cliente)
     {
         //
     }
@@ -41,7 +48,7 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(cliente $cliente)
     {
         //
     }
@@ -49,7 +56,7 @@ class clienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, cliente $cliente)
     {
         //
     }
@@ -57,7 +64,7 @@ class clienteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(cliente $cliente)
     {
         //
     }
